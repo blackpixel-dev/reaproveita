@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#176b45">
+  <meta name="description" content="Reaproveita: alimentos selecionados com desconto, economia e menos desperdício.">
+  <title>Reaproveita — Compre bem, desperdice menos</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="demo-banner"><span class="demo-dot"></span> Ambiente demonstrativo · produtos, pagamentos e entregas fictícios</div>
+  <header class="site-header">
+    <a class="brand" href="#" data-action="home" aria-label="Reaproveita, início">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none"><path d="M20 33V17" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/><path d="M20 21C8 21 7 12 7 7c9 0 15 3 15 12" fill="currentColor" opacity=".9"/><path d="M20 17C20 7 28 5 34 6c0 9-5 14-14 14" fill="currentColor"/></svg>
+      </span>
+      <span>reaproveita<span class="brand-period">.</span><small>economia que faz bem</small></span>
+    </a>
+    <div class="header-actions" id="headerActions">
+      <button class="text-button" data-action="login">Entrar</button>
+      <button class="button button-primary button-small" data-action="register">Criar conta</button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1">
+    <section class="screen auth-screen" id="screen-register" aria-labelledby="registerTitle">
+      <div class="auth-visual">
+        <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+        <div class="visual-leaf">✳</div>
+        <span class="eyebrow light">BOM PARA VOCÊ. MELHOR PARA O PLANETA.</span>
+        <h1>Comer bem<br>pode custar <em>menos.</em></h1>
+        <p>Encontre alimentos selecionados com desconto perto de você e dê uma nova chance ao que merece ser aproveitado.</p>
+        <div class="visual-stats"><div><strong>Até 50%</strong><span>de desconto*</span></div><div class="stats-divider"></div><div><strong>Menos descarte</strong><span>mais consciência</span></div></div>
+        <small class="visual-note">*Descontos ilustrativos do ambiente de demonstração.</small>
+      </div>
+      <div class="auth-panel">
+        <div class="auth-heading"><span class="eyebrow">COMECE POR AQUI</span><h2 id="registerTitle">Crie sua conta</h2><p>Entre para descobrir ofertas que fazem sentido para o seu bolso.</p></div>
+        <form id="registerForm" novalidate>
+          <div class="form-grid">
+            <label class="field field-full">Nome completo<input name="name" autocomplete="name" placeholder="Ex.: Ana Oliveira" required><span class="field-error"></span></label>
+            <label class="field field-full">E-mail<input name="email" type="email" autocomplete="email" placeholder="voce@email.com" required><span class="field-error"></span></label>
+            <label class="field">Senha <span class="field-hint">mín. 8 caracteres</span><input name="password" type="password" autocomplete="new-password" placeholder="Crie uma senha" required minlength="8"><span class="field-error"></span></label>
+            <label class="field">Confirmar senha<input name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repita a senha" required><span class="field-error"></span></label>
+            <label class="field">CEP<input name="cep" inputmode="numeric" autocomplete="postal-code" placeholder="97500-000" required maxlength="9"><span class="field-error"></span></label>
+            <label class="field">Rua e número<input name="street" autocomplete="street-address" placeholder="Rua e número" required><span class="field-error"></span></label>
+            <label class="field">Bairro<input name="district" placeholder="Seu bairro" required><span class="field-error"></span></label>
+            <label class="field">Cidade<input name="city" autocomplete="address-level2" placeholder="Sua cidade" required><span class="field-error"></span></label>
+            <label class="field field-full">Estado<input name="state" autocomplete="address-level1" placeholder="RS" maxlength="2" required><span class="field-error"></span></label>
+          </div>
+          <p class="form-message" id="registerMessage" role="alert"></p>
+          <button class="button button-primary button-wide" type="submit">Criar minha conta <span aria-hidden="true">→</span></button>
+        </form>
+        <p class="auth-switch">Já tem uma conta? <button class="inline-link" data-action="login">Fazer login</button></p>
+        <p class="privacy-note"><span aria-hidden="true">⌑</span> Protótipo local. Use somente dados fictícios.</p>
+      </div>
+    </section>
+
+    <section class="screen auth-screen hidden" id="screen-login" aria-labelledby="loginTitle">
+      <div class="auth-visual login-visual">
+        <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+        <div class="visual-leaf">✳</div>
+        <span class="eyebrow light">BEM-VINDO DE VOLTA</span>
+        <h1>Suas ofertas<br>estão <em>esperando.</em></h1>
+        <p>Boas escolhas para o seu dia, com preços mais leves e menos desperdício no caminho.</p>
+        <div class="visual-quote">“Cada alimento aproveitado é uma pequena mudança que conta.”</div>
+      </div>
+      <div class="auth-panel login-panel">
+        <div class="auth-heading"><span class="eyebrow">SUA CONTA</span><h2 id="loginTitle">Que bom ter você aqui</h2><p>Entre para ver as ofertas disponíveis.</p></div>
+        <form id="loginForm" novalidate>
+          <label class="field">E-mail<input name="email" type="email" autocomplete="email" placeholder="voce@email.com" required><span class="field-error"></span></label>
+          <label class="field">Senha<div class="password-wrap"><input name="password" type="password" autocomplete="current-password" placeholder="Sua senha" required><button type="button" class="show-password" aria-label="Mostrar senha">Mostrar</button></div><span class="field-error"></span></label>
+          <div class="login-options"><button type="button" class="inline-link" data-action="forgot">Esqueci minha senha</button></div>
+          <p class="form-message" id="loginMessage" role="alert"></p>
+          <button class="button button-primary button-wide" type="submit">Entrar na minha conta <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="demo-credentials"><strong>Quer explorar?</strong><span>Use a conta de demonstração:</span><code>demo@reaproveita.app</code><code>Reaproveita2026</code><button class="inline-link" data-action="fill-demo">Preencher acesso de demonstração</button></div>
+        <p class="auth-switch">Ainda não tem conta? <button class="inline-link" data-action="register">Criar conta grátis</button></p>
+      </div>
+    </section>
+
+    <section class="screen hidden" id="screen-catalog" aria-labelledby="catalogTitle">
+      <div class="catalog-hero">
+        <div><span class="eyebrow light">ESCOLHAS INTELIGENTES, TODOS OS DIAS</span><h1 id="catalogTitle">Boas ofertas.<br><em>Menos desperdício.</em></h1><p>Alimentos selecionados com preços especiais para aproveitar hoje.</p></div>
+        <div class="hero-art" aria-hidden="true"><span class="art-circle"></span><span class="art-fruit fruit-one">●</span><span class="art-fruit fruit-two">●</span><span class="art-leaf">✦</span><span class="art-bag">↟</span></div>
+        <div class="hero-bottom"><span><strong id="heroOfferCount">8</strong> ofertas para descobrir</span><span>♡ Compre com propósito</span></div>
+      </div>
+      <div class="catalog-welcome"><div><span class="eyebrow">OLÁ, <span id="userFirstName">PESSOA</span>!</span><h2 id="catalogSubtitle">O que vamos aproveitar hoje?</h2></div><div class="savings-pill"><span class="savings-icon">↘</span><span><strong>Economia que aparece</strong><small>Compare o preço original e aproveite.</small></span></div></div>
+      <div class="catalog-tools">
+        <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><input id="searchInput" type="search" placeholder="Buscar alimento ou estabelecimento..." aria-label="Buscar alimento ou estabelecimento"></label>
+        <label class="select-wrap"><span class="sr-only">Filtrar por categoria</span><select id="categoryFilter"><option value="all">Todas as categorias</option><option value="Frutas">Frutas</option><option value="Verduras">Verduras</option><option value="Padaria">Padaria</option><option value="Refrigerados">Refrigerados</option><option value="Mercearia">Mercearia</option></select></label>
+        <label class="select-wrap"><span class="sr-only">Ordenar produtos</span><select id="sortFilter"><option value="featured">Em destaque</option><option value="price">Menor preço</option><option value="discount">Maior desconto</option></select></label>
+        <button class="filter-reset" id="clearFilters">Limpar</button>
+      </div>
+      <div class="results-line"><span id="resultsCount">8 ofertas encontradas</span><span><span class="live-dot"></span> Ofertas de demonstração</span></div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyState"><span>⌕</span><h3>Nenhuma oferta por aqui</h3><p>Tente outro termo ou remova os filtros para ver mais alimentos.</p><button class="button button-secondary" data-action="clear-filters">Limpar filtros</button></div>
+      <section class="impact-strip"><div class="impact-icon">✳</div><div><strong>Pequenas escolhas, impacto positivo.</strong><p>Ao escolher produtos que seriam difíceis de vender a tempo, você ajuda a reduzir o desperdício.</p></div><span class="impact-leaf">↗</span></section>
+    </section>
+
+    <section class="screen hidden checkout-screen" id="screen-checkout" aria-labelledby="checkoutTitle">
+      <div class="page-topline"><button class="back-link" data-action="back-catalog">← Voltar às ofertas</button><span class="eyebrow">COMPRA DEMONSTRATIVA</span></div>
+      <div class="checkout-heading"><span class="eyebrow">SÓ MAIS UM PASSO</span><h1 id="checkoutTitle">Vamos finalizar?</h1><p>Confira os itens, confirme o endereço e escolha como deseja pagar.</p></div>
+      <div id="checkoutContent" class="checkout-layout"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="footer-brand" href="#" data-action="home">reaproveita<span>.</span></a><span>Mais economia. Menos desperdício.</span><span>Projeto demonstrativo · © 2026</span></footer>
+
+  <div class="cart-backdrop hidden" id="cartBackdrop" data-action="close-cart"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-modal="true" role="dialog" aria-hidden="true">
+    <div class="drawer-header"><div><span class="eyebrow">SUA SELEÇÃO</span><h2 id="cartTitle">Meu carrinho <span id="cartCount" class="count-badge">0</span></h2></div><button class="icon-button" data-action="close-cart" aria-label="Fechar carrinho">×</button></div>
+    <div id="cartItems" class="drawer-items"></div>
+    <div id="cartFooter" class="drawer-footer"></div>
+  </aside>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="icon-button modal-close" data-action="close-modal" aria-label="Fechar">×</button><div id="modalContent"></div></section>
+  </div>
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
